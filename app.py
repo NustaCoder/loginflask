@@ -11,7 +11,7 @@ app.config['MONGO_URI'] = "mongodb://nusta_coder:shadow7431@cluster0-shard-00-00
 mongo = PyMongo(app)
 
 
-@app.route('/.')
+@app.route('/')
 def goto_index():
     return render_template('login.html', a="hello from server")
 
@@ -32,7 +32,12 @@ def my_login():
     return render_template("error.html")
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup.html', methods=['POST', 'GET'])
+def render_signup():
+    return render_template("signup.html")
+
+
+@app.route('/signup', methods=['POST', 'GET'])
 def add_user():
     a = request.form['username']
     b = request.form['pwd']
