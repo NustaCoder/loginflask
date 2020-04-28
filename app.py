@@ -11,9 +11,9 @@ app.config['MONGO_URI'] = "mongodb://nusta_coder:shadow7431@cluster0-shard-00-00
 mongo = PyMongo(app)
 
 
-@app.route('/')
+@app.route('/.')
 def goto_index():
-    return render_template('index.html', a="hello from server")
+    return render_template('login.html', a="hello from server")
 
 
 @app.route('/login', methods=['POST'])
